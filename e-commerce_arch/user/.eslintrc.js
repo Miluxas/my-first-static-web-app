@@ -1,0 +1,26 @@
+module.exports = {
+	parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+	extends: [
+		'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+		// eslint-disable-next-line max-len
+		'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+		// eslint-disable-next-line max-len
+		'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+	],
+	parserOptions: {
+		ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+		sourceType: 'module', // Allows for the use of imports
+	},
+	rules: {
+		'max-len': [2, 120, 2, { ignoreUrls: true, tabWidth: 4 }],
+		'no-throw-literal': 'warn', // old off
+		'@typescript-eslint/explicit-member-accessibility': 0,
+		'@typescript-eslint/explicit-function-return-type': 0,
+		'@typescript-eslint/explicit-module-boundary-types': 0,
+		'@typescript-eslint/no-parameter-properties': 0,
+		'@typescript-eslint/interface-name-prefix': 0,
+		'@typescript-eslint/no-empty-function': 0,
+		// '@typescript-eslint/no-unused-vars': 0,
+		'@typescript-eslint/no-var-requires': 0,
+	},
+};

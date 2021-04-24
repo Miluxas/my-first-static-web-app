@@ -1,0 +1,9 @@
+version: "3"
+services:
+
+networks:
+  e-commerce:
+    external: true
+volumes:
+  elastic:
+    driver: local

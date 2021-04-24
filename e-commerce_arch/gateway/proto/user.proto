@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/empty.proto";
+
+/**
+ * User Service
+ */
+service User_ {
+	/*
+	* get User
+	* @param GetCustomerReq
+	* @return User
+	*/
+	rpc getUser (GetUserReq) returns (User) {};
+
+	/*
+	* get All Users
+	* @param Empty
+	* @return Users
+	*/
+	rpc getUsers (google.protobuf.Empty) returns (UserListRes) {};
+
+}
+
+/**
+ * User Request
+ */
+message GetUserReq {
+	string userId = 1;
+}
+
+/**
+ * User
+ */
+message User {
+	string name = 1;
+	string family = 2;
+	string email = 3;
+	bool isActive = 44;
+}
+
+/**
+ * User List Response
+ */
+message UserListRes {
+	repeated User userList = 1;
+}
